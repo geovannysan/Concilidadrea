@@ -1,0 +1,101 @@
+/* Styles*/
+
+:root {
+    --bs-pacifico: #009ceb;
+    --bs-guayaquil: #d2006e;
+    --bs-pichincha: #ffdf00;
+    --bs-produbanco: #016634;
+    --bs-spead:#005eebd8;
+}
+input[type="file"] {
+  display: none;
+}
+
+.bg-pacifico{
+    background: var(--bs-pacifico);
+}
+.bg-guayaquil{
+    background: var(--bs-guayaquil);
+}
+.bg-pichincha{
+    background: var(--bs-pichincha);
+}
+.bg-produbanco{
+    background: var(--bs-produbanco);
+}
+
+
+.text-pacifico{
+    color: var(--bs-pacifico);
+}
+.text-guayaquik{
+    color: var(--bs-guayaquil);
+}
+.text-pichincha{
+    color: var(--bs-pichincha);
+}
+.text-produbanco{
+    color: var(--bs-produbanco);
+}
+
+.btn-pacifico {
+    color: #fff;
+    background: var(--bs-pacifico);
+  }
+  .btn-pacifico:hover {
+    color: #fff;
+    background-color: #018ed5;
+  }
+
+.btn-pichincha {
+    color: #000;
+    background: var(--bs-pichincha);
+  }
+  .btn-pichincha:hover {
+    color: #000;
+    background-color: #dcbf02;
+  }
+
+
+.btn-produbanco {
+    color: #fff;
+    background: var(--bs-produbanco);
+  }
+  .btn-produbanco:hover {
+    color: #fff;
+    background-color: #02592d;
+  }
+    .btn-spead {
+      color: #fff;
+      background: var(--bs-spead);
+    }
+  
+    .btn-spead:hover {
+      color: #fff;
+      background-color: #022b59;
+    }
+
+
+.btn-guayaquil {
+    color: #fff;
+    background: var(--bs-guayaquil);
+  }
+  .btn-guayaquil:hover {
+    color: #fff;
+    background-color: #bc0362;
+  }
+
+  .border-pichincha {
+    border-color: var(--bs-pichincha) !important;
+    border: 2px;
+  }
+  .border-pacifico {
+    border-color: var(--bs-pacifico) !important;
+  }
+  .border-guayaquil {
+    border-color: var(--bs-guayaquil) !important;
+  }
+  .border-produbanco {
+    border-color: var(--bs-produbanco) !important;
+  }
+  

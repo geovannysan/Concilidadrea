@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import ArchivosViews from './Pages/Archivos';
+import ConciliaView from './Pages/Concilia';
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <BrowserRouter>
+   <Switch>
+    <Route path='/files' render={(props)=> <ArchivosViews {...props}/>} />
+    <Route path='/concilia' render={(props)=><ConciliaView {...props}/>}
+  />
+          <Route path="/" render={() => <Redirect from="/" to="/files" />} />
+
+   </Switch>
+   </BrowserRouter>
+   
+    </>
   );
 }
 
