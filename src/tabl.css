@@ -1,0 +1,315 @@
+:root {
+    --white: #fff;
+    --celeste: #3691ef;
+    --dark: #212529;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: none;
+    color: var(--celeste) !important;
+    border: none;
+    padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: none;
+    padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background: none;
+    color: var(--celeste) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.buttons-excel {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--dark);
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .05rem;
+    background-color: #198754;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+table.dataTable .label {
+    font-weight: 700 !important;
+    font-size: 8.5px;
+    padding: 3px 6px;
+}
+
+.label {
+    display: inline;
+    padding: 3px 6px 4px;
+    font-size: 75%;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.label.label-danger {
+    background: #f44336 !important;
+}
+
+.label-danger {
+    background-color: #ff5b57 !important;
+}
+
+.dt-button-ligth {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .05rem;
+    color: #000;
+    background-color: #f8f9fa;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    vertical-align: middle;
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #d4d4d4;
+}
+
+.table thead tr th {
+    font-weight: 500;
+    border-bottom: 1px solid #adadad;
+}
+
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-space: nowrap;
+}
+
+table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting {
+    padding-right: 15px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    border-left-width: 0;
+}
+
+.dataTables_wrapper.dt-bootstrap .dataTables_filter label .form-control,
+.dataTables_wrapper.dt-bootstrap4 .dataTables_filter label .form-control {
+    display: block;
+    margin-left: 8px;
+    width: 260px;
+    height: 34px;
+}
+
+.dataTables_wrapper.dt-bootstrap .dataTables_info,
+.dataTables_wrapper.dt-bootstrap4 .dataTables_info {
+    font-weight: 500;
+    color: #6e6e6e;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap;
+}
+
+.dt-button-ligth:hover {
+    background-color: #dfdfdf;
+}
+
+.buttons-excel:hover {
+    background-color: #1e9960;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+
+
+}
+
+.dataTables_wrapper td {
+    border: 0.5px solid rgba(0, 0, 0, 0.068);
+}
+
+.btn.btn-default {
+    color: #313131;
+    background: #ffffff;
+    border-color: #d9dfe2;
+}
+
+
+
+.img-fluid-sm {
+    position: relative !important;
+
+
+}
+
+.info-user {
+    position: relative !important;
+
+    margin-top: -40% !important;
+}
+
+.dataTables_filter {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+table {
+    border-top: 1px solid black;
+    font-size: 13px;
+}
+
+.dataTables_filter label {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: space-between;
+
+
+}
+
+.dataTables_filter input {
+    margin-top: 2px;
+}
+
+@media (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        margin-top: 1rem !important;
+
+    }
+
+}
+
+@media(min-width:768px) {
+    ion-menu-button {
+        display: none !important;
+    }
+
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 1px;
+}
+
+/*a.paginate_button.current {
+    background-color: rgb(0, 47, 255) !important;
+}*/
+.paginate_button.previous {
+    border: solid 1 !important;
+    color: #1e9960 !important;
+}
+
+li.paginate_button :hover {
+    background: "red" !important;
+    background-color: #3691ef !important;
+}
+
+li.paginate_button {
+    padding: 1px !important;
+}
+
+.btn-default,
+.btn-default:hover {
+    color: #212529;
+    background-color: #fff;
+    border-color: rgb(175, 175, 175);
+}
+
+.btn-default {
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+}
+
+body table.dataTable {
+    border-collapse: collapse !important;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+    padding: 0.3125rem 0.625rem;
+    font-size: .75rem;
+    line-height: 1.4;
+    border-radius: 2px;
+}
+
+.paging_full_numbers span.paginate_button {
+    background: repeat-x scroll 50% 50% #0078AE;
+    border: 1px solid #77D5F7;
+    color: #FFFFFF !important;
+    font-weight: normal !important;
+}
+
+.paging_full_numbers span.paginate_button:hover {
+    background: repeat-x scroll 50% 50% #79C9EC !important;
+    border: 1px solid #448DAE !important;
+    color: var(--white) !important;
+    font-weight: normal !important;
+}
+
+.paging_full_numbers span.paginate_active {
+    background: repeat-x scroll 50% 50% #6EAC2C !important;
+    border: 1px solid #ACDD4A !important;
+    color: #FFFFFF !important;
+    font-weight: normal !important;
+}
+
+.paginate_button.current {
+    background: repeat-x scroll 50% 50% #4f9dd1 !important;
+    border: 1px solid #4aa7dd !important;
+    color: #FFFFFF !important;
+    font-weight: normal !important;
+}

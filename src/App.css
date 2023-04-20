@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.dropdown-menu.show{
+  position: absolute !important;
+  z-index: 100 !important;
+}
+.btn-default {
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+}
+.btn-default,
+.btn-default:hover {
+  color: #212529;
+  background-color: #fff;
+  border-color: rgb(175, 175, 175);
+}
+.btn.btn-default {
+  color: #313131;
+  background: #ffffff;
+  border-color: #d9dfe2;
+}
