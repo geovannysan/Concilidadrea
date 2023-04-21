@@ -7,6 +7,7 @@ export const filesPichincha = async (parm, name) => {
         let { data } = await axios.post("http://localhost:5200/api/FilesApi/FilePichincha", fordata)
         return data;
     } catch (error) {
+        console.log(error)
         return error;
     }
 }

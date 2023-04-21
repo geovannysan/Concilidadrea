@@ -2,17 +2,18 @@ import { useEffect, useState } from "react"
 import { filesGuayaquil, filesPacifico, filesPichincha, filesProdubanco, filesTransacio } from "../utils/Files/indes";
 import { SnackbarAction, useSnackbar, SnackbarProvider } from "notistack";
 import $ from 'jquery'
+import { useDispatch } from "react-redux";
+import { addmesaje } from "../StoreRedux/Slice/mensajeSlice";
+
+
 export default function ArchivosViews() {
-    let [pichincha, setPichincha] = useState([]);
-    let [pacifico, setPacifico] = useState([]);
-    let [produbanco, setProdubanco] = useState([]);
-    let [guayaquil, setGuayaquil] = useState([]);
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    let usedispacth = useDispatch();
+    const { enqueueSnackbar } = useSnackbar();
     let [uno, setSpineruno] = useState(true);
     let [dos, setSpinerdos] = useState(true);
     let [tres, setSpinertres] = useState(true);
     let [cuatro, setSpinercuatro] = useState(true);
-    let [cinco,setCinco]= useState(true);
+    let [cinco, setCinco] = useState(true);
     let [fileslist, setFiles] = useState({
         "file-pichincha": "",
         "file-pacifico": "",
@@ -37,29 +38,33 @@ export default function ArchivosViews() {
             })
             return;
         }
-        document.getElementById("file-pichincha").value = ""
-        document.getElementById("pichincha").innerText = ""
-        setFiles({
-            ...fileslist,
-            "file-pichincha": ""
-        })
+        
+        console.log(fileslist["file-pichincha"],nombre)
         setSpineruno(false)
         filesPichincha(fileslist["file-pichincha"], nombre).then(oup => {
+            console.log(oup)
             if (oup.myObjects.length > 0) {
-                setSpineruno(true)
-                enqueueSnackbar("Se registaron " + oup.num + " de un total de " + oup.myObjects.length + " filas del archivo " + nombre, {
-                    variant: 'success',
-                    anchorOrigin: {
-                        vertical: 'top',
-                        horizontal: 'right'
-                    }
-                })
-                document.getElementById('file-pichincha').value = null;
-                document.getElementById("pichincha").innerText = ""
-            }
+                 setSpineruno(true)
+                 usedispacth(addmesaje({
+                     colorhead: "#32a852",
+                     titel: "Se registaron " + oup.num ,
+                     body:  "De un total de " + oup.myObjects.length + " filas del archivo " + nombre,
+                     icon: "",
+                 }))
+                 enqueueSnackbar("Registro exitoso", {
+                     variant: "reportComplete", anchorOrigin: {
+                         vertical: 'top',
+                         horizontal: 'right'
+                     }
+                 }
+                 )
+                 
+                 document.getElementById('file-pichincha').value = null;
+                 document.getElementById("pichincha").innerText = ""
+             }
         }).catch(err => {
             setSpineruno(true)
-            console.log(console.log(err))
+            console.log(err)
             enqueueSnackbar("Hubo un error ", {
                 variant: 'error',
                 anchorOrigin: {
@@ -84,30 +89,30 @@ export default function ArchivosViews() {
             })
             return;
         }
-         setSpinertres(false)
-         filesProdubanco(fileslist["file-produbanco"], nombre).then(oup => {
-             setSpinertres(true)
-             console.log(oup)
-             if (oup.myObjects.length > 0) {               
-                 console.log(oup)
-                 enqueueSnackbar("Se registaron " + oup.num + " de un total de " + oup.myObjects.length + " filas del archivo " + nombre, {
-                     variant: 'success',
-                     anchorOrigin: {
-                         vertical: 'top',
-                         horizontal: 'right'
-                     }
-                 })
-             }
-             document.getElementById("file-produbanco").value = ""
-             document.getElementById("produbanco").innerText = ""
-             setFiles({
-                 ...fileslist,
-                 "file-produbanco": ""
-             })
-         }).catch(err => {
-             setSpinertres(true)
-             console.log(console.log(err))
-         })
+        setSpinertres(false)
+        filesProdubanco(fileslist["file-produbanco"], nombre).then(oup => {
+            setSpinertres(true)
+            console.log(oup)
+            if (oup.myObjects.length > 0) {
+                console.log(oup)
+                enqueueSnackbar("Se registaron " + oup.num + " de un total de " + oup.myObjects.length + " filas del archivo " + nombre, {
+                    variant: 'success',
+                    anchorOrigin: {
+                        vertical: 'top',
+                        horizontal: 'right'
+                    }
+                })
+            }
+            document.getElementById("file-produbanco").value = ""
+            document.getElementById("produbanco").innerText = ""
+            setFiles({
+                ...fileslist,
+                "file-produbanco": ""
+            })
+        }).catch(err => {
+            setSpinertres(true)
+            console.log(console.log(err))
+        })
     }
     function CargarPacifico() {
         // console.log(fileslist["file-pacifico"],fileslist)
@@ -142,11 +147,11 @@ export default function ArchivosViews() {
                 ...fileslist,
                 "file-pacifico": ""
             })
-            
+
             console.log(oup)
         }).catch(err => {
             setSpinerdos(true)
-            
+
             console.log(console.log(err))
         })
     }
@@ -179,7 +184,7 @@ export default function ArchivosViews() {
                     }
                 })
             }
-            document.getElementById("file-guayaquil").value = ""         
+            document.getElementById("file-guayaquil").value = ""
             document.getElementById("guayaquil").innerText = ""
             setFiles({
                 ...fileslist,
@@ -195,31 +200,31 @@ export default function ArchivosViews() {
         var input = fileslist["lista"][0].name;
         let nombre = input.split(".")[0]
         console.log(fileslist["lista"][0], nombre)
-         setCinco(false)
-          filesTransacio(fileslist["lista"], nombre).then(oup => {
-              setCinco(true)
-              if (oup.myObjects.length > 0) {
-                  setCinco(true)
-                  console.log(oup)
-                  enqueueSnackbar("Se registaron " + oup.num + " de un total de " + oup.myObjects.length + " filas del archivo " + nombre, {
-                      variant: 'success',
-                      anchorOrigin: {
-                          vertical: 'top',
-                          horizontal: 'right'
-                      }
-                  })
-                  document.getElementById("lista").value=""
-                  document.getElementById("transacion").innerText = ""
-                  setFiles({
+        setCinco(false)
+        filesTransacio(fileslist["lista"], nombre).then(oup => {
+            setCinco(true)
+            if (oup.myObjects.length > 0) {
+                setCinco(true)
+                console.log(oup)
+                enqueueSnackbar("Se registaron " + oup.num + " de un total de " + oup.myObjects.length + " filas del archivo " + nombre, {
+                    variant: 'success',
+                    anchorOrigin: {
+                        vertical: 'top',
+                        horizontal: 'right'
+                    }
+                })
+                document.getElementById("lista").value = ""
+                document.getElementById("transacion").innerText = ""
+                setFiles({
                     ...fileslist,
-                      "lista":""
-                  })
-              }
-              console.log(oup)
-          }).catch(err => {
-              setCinco(true)
-              console.log(console.log(err))
-          })
+                    "lista": ""
+                })
+            }
+            console.log(oup)
+        }).catch(err => {
+            setCinco(true)
+            console.log(console.log(err))
+        })
     }
     function onchange(e) {
         console.log(e.files)
@@ -248,8 +253,9 @@ export default function ArchivosViews() {
         if (e.id == "lista") document.getElementById("transacion").innerHTML = nombre
         return;
     }
+    //  enqueueSnackbar("You're report is ready", { variant: "reportComplete" })
     return (
-        <>        
+        <>
             <div className="col-8 col-md-6 mx-auto">
                 <div className="container mb-3 mt-3">
                     <div className="col-10 col-md-9 col-lg-5 mx-auto mx-md-0">
