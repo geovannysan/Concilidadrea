@@ -22,6 +22,11 @@ export default function ConciliaView() {
                         document.getElementById("" + f.name + "SI").innerText = f.total_compras;
                         document.getElementById("" + f.name + "SITO").innerText = f.total;
                     }
+                    if (f.codigo_encontrado == "NO") {
+
+                       // document.getElementById("" + f.name + "SI").innerText = f.total_compras;
+                        document.getElementById("" + f.name + "SITO").innerText = f.total_compras;
+                    }
                 })
                 setFech({
                     inid:ini,
